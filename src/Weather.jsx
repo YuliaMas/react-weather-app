@@ -6,12 +6,14 @@ import Main from "./Main";
 
 export default function Weather() {
   let [city, setCity] = useState("");
-  let [loaded, setLoaded] = useState(false);
-  let [weather, setWeather] = useState({});
+  let [weatherData, setWeatherData] = useState({ loaded: false });
 
   function displayWeather(response) {
-    setLoaded(true);
-    setWeather({
+    console.log(response.data);
+    setWeatherData({
+      loaded: true,
+      date: new Date(response.data.dt * 1000),
+      city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -34,17 +36,18 @@ export default function Weather() {
 
   let form = <SearchForm handleSubmit={handleSubmit} changeCity={changeCity} />;
 
-  if (loaded) {
+  if (weatherData.loaded) {
     return (
       <>
         {form}
         <Main
-          temp={Math.round(weather.temperature)}
-          city={city}
-          wind={weather.wind}
-          humidity={weather.humidity}
-          description={weather.description}
-          icon={weather.icon}
+          temp={Math.round(weatherData.temperature)}
+          city={weatherData.city}
+          wind={weatherData.wind}
+          humidity={weatherData.humidity}
+          description={weatherData.description}
+          icon={weatherData.icon}
+          date={weatherData.date}
         />
       </>
     );
