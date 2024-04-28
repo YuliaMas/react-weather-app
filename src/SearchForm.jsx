@@ -2,15 +2,23 @@ import React from "react";
 
 export default function SearchForm(props) {
   return (
-    <form id="search-form" onSubmit={props.handleSubmit}>
-      <input
-        type="search"
-        onChange={props.changeCity}
-        placeholder="Enter a city.."
-        className="search-input"
-        id="search-input"
-      />
-      <input type="submit" value="Search" className="search-button" />
+    <form id="search-form" onSubmit={props.handleSubmit} className="m-auto">
+      <div className="input-group mb-3">
+        <input
+          type="search"
+          onChange={props.changeCity}
+          className="form-control bg-transparent border  border-secondary"
+          placeholder="Enter a city.."
+          aria-label="Enter a city.."
+          aria-describedby="button-addon2"
+        />
+        <input
+          className="btn btn-outline-secondary"
+          type="submit"
+          id="button-addon2"
+          value="Search"
+        />
+      </div>
     </form>
   );
 }
