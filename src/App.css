@@ -11,7 +11,7 @@ h5 {
   color: #9c27b0 !important;
   font-weight: 600;
 }
-.container > h1:first-child {
+header > h1 {
   color: rgb(237 216 239);
   font-family: "Lobster", sans-serif;
   font-weight: 400;
