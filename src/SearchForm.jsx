@@ -7,7 +7,7 @@ export default function SearchForm(props) {
         <input
           type="search"
           onChange={props.changeCity}
-          className="form-control bg-transparent border  border-secondary"
+          className="form-control bg-transparent border border-secondary"
           placeholder="Enter a city.."
           aria-label="Enter a city.."
           aria-describedby="button-addon2"
