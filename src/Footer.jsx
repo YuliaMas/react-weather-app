@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="vh-10 text-center pt-3">
       <p>
         This project was coded by{" "}
         <a href="https://github.com/YuliaMas" target="_blank" rel="noreferrer">
