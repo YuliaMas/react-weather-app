@@ -1,107 +1,97 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
-
-body {
-  background: #f9f7fe;
-  font-family: "Roboto", sans-serif;
+/* .new {
+  height: 30vh;
+  width: 100%;
+} */
+h5 {
+  color: #9c27b0 !important;
+  font-weight: 600;
 }
-
+.container > h1:first-child {
+  color: rgb(237 216 239);
+}
 a {
   color: #885df1;
 }
-
 .weather-app {
-  background: white;
-  max-width: 600px;
-  margin: 60px auto;
+  width: 60%;
+  height: 80%;
+  max-height: 80%;
+  max-width: 90%;
+  background-image: url(../assets/eberhard-grossgasteiger-J9NDmBVhN04-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
-
-header {
-  border-bottom: 1px solid #f9f7fe;
-  padding-bottom: 30px;
-}
-
-.search-input {
-  background-color: #f9f7fe;
-  border: none;
-  color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
-  padding: 20px;
-  width: 75%;
-  border-radius: 6px;
-}
-
-.search-button {
-  margin-left: 5px;
-  font-size: 16px;
-  background-color: #885df1;
-  color: white;
-  border: none;
-  padding: 20px;
-  line-height: 1;
-  border-radius: 5px;
+#search-form {
+  width: 60%;
 }
 .gZmPOF {
   justify-content: center;
+  margin-top: 150px;
 }
 main {
   padding: 30px 0;
 }
-
+#current-temperature {
+  color: rgb(99 68 139);
+}
 .current-temperature {
   font-size: 48px;
 }
-
 .current-weather {
+  height: 20vh;
   display: flex;
   justify-content: space-between;
 }
-
 .current-city {
   font-size: 38px;
   font-weight: 900;
   margin: 0;
+  color: rgb(99 68 139);
 }
-
 .current-details {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
 }
-
 .current-details strong {
   color: #f65282;
 }
-
 .current-temperature-icon {
-  position: relative;
+  /* position: relative;
   top: -8px;
   font-size: 40px;
-  margin-right: 10px;
+  margin-right: 10px; */
 }
-
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
+  color: rgba(255, 255, 224, 0.886);
 }
-
+img {
+  vertical-align: text-top;
+  width: 60%;
+}
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
   top: -38px;
+  color: rgba(255, 255, 224, 0.886);
 }
-
-footer {
-  border-top: 1px solid #f9f7fe;
-  text-align: center;
-  padding-top: 15px;
-  color: rgba(39, 33, 66, 0.4);
+footer p {
+  color: #ecd7ee;
 }
 footer a {
   text-decoration: none;
+  color: #fadfb7;
 }
