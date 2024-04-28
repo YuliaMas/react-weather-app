@@ -59,6 +59,11 @@ export default function Weather() {
           radius="48"
           color="#414D5F"
           ariaLabel="watch-loading"
+          wrapperStyle={{
+            "justify-content": "center",
+            "margin-top": " 150px",
+          }}
+          wrapperClass="watch"
         />
       </>
     );
