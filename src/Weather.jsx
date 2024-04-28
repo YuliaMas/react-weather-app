@@ -60,8 +60,8 @@ export default function Weather() {
           color="#414D5F"
           ariaLabel="watch-loading"
           wrapperStyle={{
-            "justify-content": "center",
-            "margin-top": " 150px",
+            justifyContent: "center",
+            marginTop: " 150px",
           }}
           wrapperClass="watch"
         />
