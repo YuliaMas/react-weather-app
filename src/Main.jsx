@@ -1,3 +1,6 @@
+import React from "react";
+import FormattedDate from "./FormattedDate";
+
 export default function Main(props) {
   return (
     <main className="p-0">
@@ -9,7 +12,7 @@ export default function Main(props) {
           <div className="current-temperature-icon">
             <img src={props.icon} alt={props.description} />
           </div>
-          <h5> {props.description.toUpperCase()}</h5>{" "}
+          <h5 className="text-capitalize"> {props.description}</h5>{" "}
           <p className="current-details">
             Humidity: <strong>{props.humidity}%</strong>, Wind:{" "}
             <strong>{props.wind}km/h</strong>
@@ -26,16 +29,7 @@ export default function Main(props) {
             <span className="current-temperature-unit">°C</span>{" "}
             <span className="current-temperature-unit">|</span>{" "}
             <span className="current-temperature-unit">°F</span>
-            <p className="current-date current-details lh-lg">
-              <b>
-                <span id="current-date">28-04-2024</span>,{" "}
-                <strong id="current-day">Sunday</strong> <br />{" "}
-                <span id="current-time" className="mt-3 lh-lg">
-                  17:00
-                </span>
-              </b>{" "}
-              <br />
-            </p>
+            <FormattedDate date={props.date} />
           </div>
         </div>
       </div>
