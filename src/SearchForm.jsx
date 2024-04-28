@@ -11,6 +11,7 @@ export default function SearchForm(props) {
           placeholder="Enter a city.."
           aria-label="Enter a city.."
           aria-describedby="button-addon2"
+          id="searchField"
         />
         <input
           className="btn btn-outline-secondary"
