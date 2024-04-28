@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Audio } from "react-loader-spinner";
+import { Watch } from "react-loader-spinner";
 import axios from "axios";
 import SearchForm from "./SearchForm";
 import Main from "./Main";
@@ -52,14 +52,13 @@ export default function Weather() {
     return (
       <>
         {form}
-        <Audio
+        <Watch
+          visible={true}
           height="80"
           width="80"
-          radius="9"
-          color="yellow"
-          ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
+          radius="48"
+          color="#414D5F"
+          ariaLabel="watch-loading"
         />
       </>
     );
