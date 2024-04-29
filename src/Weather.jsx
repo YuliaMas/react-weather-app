@@ -4,17 +4,16 @@ import axios from "axios";
 import SearchForm from "./SearchForm";
 import Main from "./Main";
 
-export default function Weather() {
-  let [city, setCity] = useState("");
+export default function Weather(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ loaded: false });
 
   function displayWeather(response) {
-    console.log(response.data);
     setWeatherData({
       loaded: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -22,12 +21,16 @@ export default function Weather() {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayWeather);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function changeCity(event) {
@@ -40,18 +43,11 @@ export default function Weather() {
     return (
       <>
         {form}
-        <Main
-          temp={Math.round(weatherData.temperature)}
-          city={weatherData.city}
-          wind={weatherData.wind}
-          humidity={weatherData.humidity}
-          description={weatherData.description}
-          icon={weatherData.icon}
-          date={weatherData.date}
-        />
+        <Main info={weatherData} />
       </>
     );
   } else {
+    search();
     return (
       <>
         {form}
