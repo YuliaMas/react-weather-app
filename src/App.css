@@ -65,6 +65,10 @@ main {
 .current-details strong {
   color: #f65282;
 }
+.current-date,
+.current-time {
+  color: #ecd7ee;
+}
 .current-temperature-icon {
   /* position: relative;
   top: -8px;
@@ -85,6 +89,10 @@ img {
   position: relative;
   top: -38px;
   color: rgba(255, 255, 224, 0.886);
+}
+.current-temperature-unit > a {
+  text-decoration: none;
+  color: rgb(99 68 139);
 }
 footer p {
   color: #ecd7ee;
