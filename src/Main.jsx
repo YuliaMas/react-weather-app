@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Main(props) {
   return (
@@ -11,7 +12,8 @@ export default function Main(props) {
       <div className="current-weather d-flex justify-content-between align-items-end">
         <div>
           <div className="current-temperature-icon">
-            <img src={props.info.icon} alt={props.info.description} />
+            {/* <img src={props.info.icon} alt={props.info.description} /> */}
+            <WeatherIcon code={props.info.icon} />
           </div>
           <h5 className="text-capitalize"> {props.info.description}</h5>{" "}
           <p className="current-details">
