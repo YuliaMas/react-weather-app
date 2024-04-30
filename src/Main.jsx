@@ -13,7 +13,10 @@ export default function Main(props) {
         <div>
           <div className="current-temperature-icon">
             {/* <img src={props.info.icon} alt={props.info.description} /> */}
-            <WeatherIcon code={props.info.icon} />
+            <WeatherIcon
+              code={props.info.icon}
+              descript={props.info.description}
+            />
           </div>
           <h5 className="text-capitalize"> {props.info.description}</h5>{" "}
           <p className="current-details">
