@@ -1,9 +1,10 @@
 import React from "react";
+import "./SearchForm.css";
 
 export default function SearchForm(props) {
   return (
     <form id="search-form" onSubmit={props.handleSubmit} className="m-auto">
-      <div className="input-group mb-3">
+      <div className="input-group ">
         <input
           type="search"
           onChange={props.changeCity}
