@@ -23,12 +23,12 @@ export default function FormattedDate(props) {
   return (
     <p className="current-date current-details lh-lg">
       <b>
+        <span id="current-day">{days[day]}</span> <br />
         <span id="current-date">{date}</span>,{" "}
-        <strong id="current-day">{days[day]}</strong> <br />{" "}
         <span id="current-time" className="mt-3 lh-lg">
           {hours}:{minutes}
         </span>
-      </b>{" "}
+      </b>
       <br />
     </p>
   );
