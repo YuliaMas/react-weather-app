@@ -42,7 +42,11 @@ export default function WeatherIcon(props) {
     );
   } else {
     return (
-      <WeatherSvg state={codeMapping[props.code]} width={100} height={100} />
+      <WeatherSvg
+        state={codeMapping[props.code]}
+        width={props.width}
+        height={props.height}
+      />
     );
   }
 }
