@@ -14,6 +14,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../assets/nathan-anderson-L95xDkSSuWw-unsplash.jpg);
+  overscroll-behavior: none;
+  overflow-y: hidden;
 }
 
 code {
