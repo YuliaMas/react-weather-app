@@ -3,6 +3,7 @@ import { Watch } from "react-loader-spinner";
 import axios from "axios";
 import SearchForm from "./SearchForm";
 import Main from "./Main";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeatherData({
       loaded: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
@@ -26,7 +28,12 @@ export default function Weather(props) {
     let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayWeather);
+    axios
+      .get(apiUrl)
+      .then(displayWeather)
+      .catch((error) =>
+        console.log("Oops.It's wrong city.Please void another one")
+      );
   }
 
   function handleSubmit(event) {
@@ -45,6 +52,7 @@ export default function Weather(props) {
       <>
         {form}
         <Main info={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </>
     );
   } else {
